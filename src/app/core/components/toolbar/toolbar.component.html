@@ -1,0 +1,14 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span>Roads Untraveled Ec</span>
+    <span class="example-spacer"></span>
+    <div class="grid w-full justify-end">
+        <div class="grid grid-cols-3 gap-4">
+            <div [routerLink]="['/']" class="cursor-pointer">Home</div>
+            <div [routerLink]="['/thinking', 'list']" class="cursor-pointer">Places</div>
+            <div> <button class="bg-blue-50" mat-raised-button>Login</button></div>
+        </div>
+    </div>
+</mat-toolbar>

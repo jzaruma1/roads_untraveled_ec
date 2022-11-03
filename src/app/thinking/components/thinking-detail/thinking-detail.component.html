@@ -1,0 +1,25 @@
+<div class="pr-10 pl-10 pt-5">
+    <form [formGroup]="form" (ngSubmit)="save()">
+        <div class="grid grid-cols-2 gap-4 mb-5">
+            <div>
+                <mat-form-field class="example-full-width w-full" appearance="fill">
+                    <mat-label>Place</mat-label>
+                    <input matInput placeholder="Enter Title" formControlName="title">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="example-full-width w-full" appearance="fill">
+                    <mat-label>Description</mat-label>
+                    <input matInput placeholder="Enter Description" value="Ambato" formControlName="description">
+                </mat-form-field>
+            </div>
+        </div>
+        <mat-divider class="mb-5"></mat-divider>
+        <div class="grid grid-cols-1">
+            <div class="justify-end flex space-x-5">
+                <button mat-raised-button color="secondary" type="button" (click)="close()">Back</button>
+                <button mat-raised-button color="primary">Save</button>
+            </div>
+        </div>
+    </form>
+</div>

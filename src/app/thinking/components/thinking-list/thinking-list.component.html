@@ -1,0 +1,46 @@
+<div class="pr-10 pl-10 pt-5">
+    <div class="grid grid-cols-2 gap-4 mb-5">
+        <div>
+            <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+                <mat-button-toggle value="bold">All</mat-button-toggle>
+                <mat-button-toggle value="italic">Costa</mat-button-toggle>
+                <mat-button-toggle value="italic">Sierra</mat-button-toggle>
+                <mat-button-toggle value="italic">Amazonía</mat-button-toggle>
+            </mat-button-toggle-group>
+        </div>
+        <div class="justify-end flex">
+            <div>
+                <button mat-raised-button color="primary" [routerLink]="['/thinking', 'new']">Add</button>
+            </div>
+        </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div *ngFor="let item of items$ | async">
+            <mat-card>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <img mat-card-md-image src="{{item?.url}}">
+                    </div>
+                    <!-- ... -->
+                    <div>
+                        <mat-card-title>{{item.title}}</mat-card-title>
+                        <mat-card-content>{{item.description}}</mat-card-content>
+                    </div>
+                </div>
+                <mat-card-actions>
+                    <div class="flex justify-end space-x-2">
+                        <div>
+                            <mat-icon class="cursor-pointer"> thumb_up</mat-icon>
+                        </div>
+                        <div>
+                            <mat-icon class="cursor-pointer"> comment</mat-icon>
+                        </div>
+                    </div>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+    <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page">
+    </mat-paginator>
+</div>
